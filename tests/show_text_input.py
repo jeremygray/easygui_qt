@@ -7,8 +7,10 @@ try:
 except ImportError:
     print("problem with import")
 
-name = easygui_qt.text_input(message="What is your name?",
+name = easygui_qt.get_string(message="What is your name?",
                             title="Mine is Reeborg.")
 
-print(name, end='')
-
+if sys.version_info < (3,):
+    print name,
+#else:
+#    print(name, end='')
